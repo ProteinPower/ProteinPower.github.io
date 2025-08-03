@@ -136,6 +136,7 @@ function updateActiveNavLink() {
   // Update active nav link based on scroll position
   const sections = document.querySelectorAll("section[id]")
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]')
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[href^="#"]')
 
   let currentSection = ""
   sections.forEach((section) => {
@@ -146,7 +147,16 @@ function updateActiveNavLink() {
     }
   })
 
+  // Обновляем активные ссылки в десктопном меню
   navLinks.forEach((link) => {
+    link.classList.remove("active")
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active")
+    }
+  })
+
+  // Обновляем активные ссылки в мобильном меню
+  mobileNavLinks.forEach((link) => {
     link.classList.remove("active")
     if (link.getAttribute("href") === `#${currentSection}`) {
       link.classList.add("active")
@@ -164,8 +174,27 @@ function initializeMobileMenu() {
   // Close menu when clicking on mobile nav links
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link")
   mobileNavLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      closeMobileMenu()
+    link.addEventListener("click", (e) => {
+      // Проверяем, что это не ссылка на внешнюю страницу
+      const href = link.getAttribute("href")
+      if (href && !href.startsWith("http") && !href.startsWith("mailto:")) {
+        e.preventDefault()
+        closeMobileMenu()
+        
+        // Плавная прокрутка к секции
+        const targetId = href.split("#")[1]
+        if (targetId) {
+          const targetElement = document.getElementById(targetId)
+          if (targetElement) {
+            setTimeout(() => {
+              targetElement.scrollIntoView({ 
+                behavior: "smooth",
+                block: "start"
+              })
+            }, 300) // Небольшая задержка для закрытия меню
+          }
+        }
+      }
     })
   })
 
@@ -190,22 +219,40 @@ function initializeMobileMenu() {
       closeMobileMenu()
     }
   })
+
+  // Close menu on window resize (если экран стал больше)
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      closeMobileMenu()
+    }
+  })
 }
 
+// Глобальная функция для вызова из HTML
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu")
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn")
 
   if (mobileMenu) {
-    mobileMenu.classList.toggle("active")
-    mobileMenuBtn.textContent = mobileMenu.classList.contains("active") ? "✕" : "☰"
-
-    // Prevent body scroll when menu is open
-    if (mobileMenu.classList.contains("active")) {
-      document.body.style.overflow = "hidden"
+    const isActive = mobileMenu.classList.contains("active")
+    
+    if (isActive) {
+      closeMobileMenu()
     } else {
-      document.body.style.overflow = ""
+      openMobileMenu()
     }
+  }
+}
+
+function openMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu")
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn")
+
+  if (mobileMenu && mobileMenuBtn) {
+    mobileMenu.classList.add("active")
+    mobileMenuBtn.classList.add("active")
+    mobileMenuBtn.textContent = "✕"
+    document.body.style.overflow = "hidden"
   }
 }
 
@@ -213,8 +260,9 @@ function closeMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu")
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn")
 
-  if (mobileMenu && mobileMenu.classList.contains("active")) {
+  if (mobileMenu && mobileMenuBtn) {
     mobileMenu.classList.remove("active")
+    mobileMenuBtn.classList.remove("active")
     mobileMenuBtn.textContent = "☰"
     document.body.style.overflow = ""
   }
@@ -305,6 +353,26 @@ function initializeInteractiveElements() {
 
 // Call after DOM is loaded
 document.addEventListener("DOMContentLoaded", initializeInteractiveElements)
+
+// Отладочная функция для проверки работы мобильного меню
+function debugMobileMenu() {
+  console.log("Mobile menu functions loaded:")
+  console.log("- toggleMobileMenu:", typeof toggleMobileMenu)
+  console.log("- openMobileMenu:", typeof openMobileMenu)
+  console.log("- closeMobileMenu:", typeof closeMobileMenu)
+  
+  const mobileMenu = document.getElementById("mobileMenu")
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn")
+  
+  console.log("Elements found:")
+  console.log("- mobileMenu:", mobileMenu)
+  console.log("- mobileMenuBtn:", mobileMenuBtn)
+}
+
+// Вызываем отладку при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  debugMobileMenu()
+})
 
 
 /*
