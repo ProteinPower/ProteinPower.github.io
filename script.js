@@ -1,4 +1,4 @@
-// Global state
+/*// Global state
 let currentTheme = localStorage.getItem("theme") || "light"
 let currentLang = localStorage.getItem("language") || "ru"
 
@@ -358,7 +358,7 @@ window.toggleMobileMenu = toggleMobileMenu
 
 
 
-/*// Global state
+*/// Global state
 let currentTheme = localStorage.getItem("theme") || "light"
 let currentLang = localStorage.getItem("language") || "ru"
 
