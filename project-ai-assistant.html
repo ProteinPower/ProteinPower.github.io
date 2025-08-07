@@ -42,7 +42,9 @@
                     <span class="lang-ru">CV</span>
                     <span class="lang-en">Resume</span>
                 </a>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+                <button class="mobile-menu-btn">☰</button>
+                <!--ffff <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button> -->
+
             </div>
         </div>
 
@@ -83,16 +85,19 @@
                 
                 <div class="project-header">
                     <div class="project-type">
-                        <span class="lang-ru">AI-АССИСТЕНТ</span>
-                        <span class="lang-en">AI ASSISTANT</span>
+                        <span class="lang-ru">AI-АССИСТЕНТ • B2C</span>
+                        <span class="lang-en">AI-АССИСТЕНТ • B2C</span>
                     </div>
                     <h1 class="project-title">
-                        <span class="lang-ru">Умный помощник для продуктивности</span>
-                        <span class="lang-en">Smart Productivity Assistant</span>
+                        <span class="lang-ru">AI-ассистент для Smart TV</span>
+                        <span class="lang-en">AI-assistant for Smart TV</span>
                     </h1>
                     <p class="project-subtitle">
-                        <span class="lang-ru">Разработка мобильного AI-ассистента, который помогает пользователям планировать день и управлять задачами через естественный диалог</span>
-                        <span class="lang-en">Development of a mobile AI assistant that helps users plan their day and manage tasks through natural dialogue</span>
+                        <span class="lang-ru"> Я участвовал в адаптации голосового ассистента из мобильной версии в интерфейс Smart TV. Вместе с командой мы с нуля прорабатывали UI-компоненты, выбирали MVP-сценарии и тестировали взаимодействие. Проект не был реализован, но мы прошли полноценный путь от идеи до финального прототипа.
+                        </span>
+
+                        <span class="lang-en">I worked on adapting a voice assistant from mobile to the Smart TV interface. Together with the team, we designed UI components from scratch, defined MVP scenarios, and tested interactions. The project was not released, but we completed the full journey from concept to final prototype.
+                        </span>
                     </p>
                 </div>
 
@@ -103,14 +108,24 @@
                             <span class="lang-ru">Роль</span>
                             <span class="lang-en">Role</span>
                         </div>
-                        <div class="meta-value">Product Designer</div>
+                        <div class="meta-value">
+                            <span class="lang-ru">Продуктовый Дизайнер</span>
+                            <span class="lang-en">Product Designer</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">
+                            <span class="lang-ru">Платформа</span>
+                            <span class="lang-en">Platform</span>
+                        </div>
+                        <div class="meta-value">Android TV</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">
                             <span class="lang-ru">Команда</span>
                             <span class="lang-en">Team</span>
                         </div>
-                        <div class="meta-value">4 <span class="lang-ru">человека</span><span class="lang-en">people</span></div>
+                        <div class="meta-value">6 <span class="lang-ru">человек</span><span class="lang-en">people</span></div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">
@@ -119,13 +134,7 @@
                         </div>
                         <div class="meta-value">3 <span class="lang-ru">месяца</span><span class="lang-en">months</span></div>
                     </div>
-                    <div class="meta-item">
-                        <div class="meta-label">
-                            <span class="lang-ru">Платформа</span>
-                            <span class="lang-en">Platform</span>
-                        </div>
-                        <div class="meta-value">iOS, Android</div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -149,25 +158,31 @@
                         <span class="lang-en">Problem</span>
                     </h2>
                     <p>
-                        <span class="lang-ru">Современные пользователи перегружены задачами и часто теряются в планировании своего дня. Существующие приложения для управления задачами требуют много времени на настройку и не адаптируются под индивидуальные потребности пользователя.</span>
-                        <span class="lang-en">Modern users are overwhelmed with tasks and often get lost in planning their day. Existing task management apps require a lot of setup time and don't adapt to individual user needs.</span>
+                       <!-- <span class="lang-ru">Современные пользователи перегружены задачами и часто теряются в планировании своего дня. Существующие приложения для управления задачами требуют много времени на настройку и не адаптируются под индивидуальные потребности пользователя.   
+                        </span>-->
+                        <!-- <span class="lang-en">Modern users are overwhelmed with tasks and often get lost in planning their day. Existing task management apps require a lot of setup time and don't adapt to individual user needs.
+
+                        </span>-->
                     </p>
                     <p>
-                        <span class="lang-ru">Основные проблемы, которые мы выявили:</span>
-                        <span class="lang-en">Key problems we identified:</span>
+                        <span class="lang-ru">Ассистент был создан для мобильных устройств и не учитывал особенности интерфейса ТВ:
+                        </span>
+
+                        <span class="lang-en">The assistant was originally built for mobile and didn’t fit TV-specific needs:
+                        </span>
                     </p>
                     <ul class="project-list">
                         <li>
-                            <span class="lang-ru">Сложность в планировании и приоритизации задач</span>
-                            <span class="lang-en">Difficulty in planning and prioritizing tasks</span>
+                            <span class="lang-ru">Отсутствовали UI-компоненты</span>
+                            <span class="lang-en">No existing UI components</span>
                         </li>
                         <li>
-                            <span class="lang-ru">Отсутствие персонализации в существующих решениях</span>
-                            <span class="lang-en">Lack of personalization in existing solutions</span>
+                            <span class="lang-ru">Сценарии не адаптированы к режиму просмотра с дивана</span>
+                            <span class="lang-en">Scenarios weren’t adapted for couch-viewing</span>
                         </li>
                         <li>
-                            <span class="lang-ru">Высокий порог входа для новых пользователей</span>
-                            <span class="lang-en">High entry barrier for new users</span>
+                            <span class="lang-ru">Не было понимания, как текущий ассистент должен вписаться в будущий интерфейс ТВ</span>
+                            <span class="lang-en">Unclear how current assistant would integrate into future TV UI</span>
                         </li>
                     </ul>
                 </div>
@@ -176,6 +191,41 @@
                 <div class="project-image-grid">
                     <img src="research-1.jpg" alt="User Research" />
                     <img src="research-2.jpg" alt="User Interviews" />
+                </div>
+
+
+                <!-- Goal Section -->
+                <div class="project-section">
+                    <h2>
+                        <span class="lang-ru">Цель проекта</span>
+                        <span class="lang-en">Project Goal</span>
+                    </h2>
+                    <p>
+                        <span class="lang-ru">Адаптировать ассистента под ТВ, сохранив узнаваемость и удобство использования. Выделить минимально необходимые сценарии, протестировать, спроектировать UI-компоненты и собрать кликабельный прототип для демонстрации.
+                        </span>
+
+                        <span class="lang-en">Adapt the assistant for TV while keeping usability and brand consistency. Define core scenarios, test them, design UI components, and build a clickable prototype for review.
+                        </span>
+                    </p>
+                    
+                    <h3>
+                        <span class="lang-ru">Ключевые инсайты</span>
+                        <span class="lang-en">Key Insights</span>
+                    </h3>
+                    <ul class="project-list">
+                        <li>
+                            <span class="lang-ru">Пользователи предпочитают естественный диалог формальным интерфейсам</span>
+                            <span class="lang-en">Users prefer natural dialogue over formal interfaces</span>
+                        </li>
+                        <li>
+                            <span class="lang-ru">Контекст и время дня критически важны для планирования</span>
+                            <span class="lang-en">Context and time of day are critical for planning</span>
+                        </li>
+                        <li>
+                            <span class="lang-ru">Пользователи хотят предложения, а не только исполнение команд</span>
+                            <span class="lang-en">Users want suggestions, not just command execution</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Approach Section -->
