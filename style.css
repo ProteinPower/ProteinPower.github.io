@@ -461,6 +461,8 @@ body {
 }
 
 .project-section {
+  max-width: 800px; /* Фиксируем ширину текста */
+  margin: 0 auto; /* Центрируем */
   margin-bottom: 80px;
 }
 
@@ -823,6 +825,7 @@ body {
 }
 
 .case-detail-value {
+  flex-wrap: wrap;
   font-weight: 600;
   color: var(--text-primary);
 }
