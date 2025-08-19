@@ -348,9 +348,9 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   color: var(--text-primary);
   line-height: 1.2;
 }
@@ -368,9 +368,16 @@ body {
   text-align: center;
 }
 
+.hero-gap {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .hero-cta {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -406,6 +413,15 @@ body {
   color: var(--accent-color);
   font-weight: 600;
   font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.project-type-alt {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 16px;
@@ -846,6 +862,8 @@ body {
 }
 
 /* Skills */
+
+/*
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -869,6 +887,48 @@ body {
   color: white;
   border-color: var(--accent-color);
 }
+*/
+
+/*skills new */
+
+.skills-list {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.skill-tag {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;}
+  /*border: 1px solid var(--border-color);
+  transition: var(--transition);
+}*/
+
+.dot-before::before {
+  content: ""; /* Обязательное свойство для псевдоэлемента */
+  display: inline-block;
+  width: 8px; /* Размер точки */
+  height: 8px;
+  background-color: #999; /* Цвет точки (серый) */
+  border-radius: 50%; /* Делает элемент круглым */
+  margin-right: 8px; /* Отступ от текста */
+}
+/*
+.skill-tag:hover {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}*/
+
 
 /* Contact Components */
 .contact {
@@ -986,6 +1046,7 @@ body {
   }
 
   .hero-cta {
+    margin: 0 auto;
     flex-direction: column;
     align-items: center;
   }
@@ -1065,6 +1126,14 @@ body {
   .results-grid {
     grid-template-columns: 1fr;
   }
+
+  .skill-tag {
+    font-size:12px;
+    padding: 4px 12px;
+
+  }
+
+
 }
 
 /* Smooth scrolling */
@@ -1073,8 +1142,9 @@ html {
 }
 
 /* Focus styles for accessibility */
-button:focus,
+/* button:focus,
 a:focus {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
+*/
