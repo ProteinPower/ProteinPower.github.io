@@ -739,7 +739,7 @@ p.main-description {
 }
 
 .result-number {
-  font-size: 48px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--accent-color);
   margin-bottom: 12px;
@@ -755,7 +755,8 @@ p.main-description {
 .project-navigation {
   margin-top: 80px;
   padding-top: 40px;
-  border-top: 1px solid var(--border-color);
+  /*border-top: 1px solid var(--border-color);*/
+  
 }
 
 .nav-project {
@@ -1137,7 +1138,7 @@ p.main-description {
 .footer {
   padding: 40px 0;
   text-align: center;
-  border-top: 1px solid var(--border-color);
+  /*border-top: 1px solid var(--border-color);*/
   color: var(--text-secondary);
   background: var(--primary-bg);
 }
