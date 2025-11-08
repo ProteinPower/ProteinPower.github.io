@@ -10,66 +10,7 @@
 </head>
 <body data-lang="ru">
     <!-- Header -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">VT</a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="nav-menu">
-                <a href="index.html#projects" class="nav-link">
-                    <span class="lang-ru">Проекты</span>
-                    <span class="lang-en">Projects</span>
-                </a>
-                <a href="index.html#about" class="nav-link">
-                    <span class="lang-ru">О себе</span>
-                    <span class="lang-en">About</span>
-                </a>
-                <a href="CV_Vladialav_Tarakanov_Senior_Product_Designer_RU.pdf" class="nav-link">
-                    <span class="lang-ru">Резюме</span>
-                    <span class="lang-en">Resume</span>
-                </a>
-                <a href="index.html#contact" class="nav-link">
-                    <span class="lang-ru">Контакты</span>
-                    <span class="lang-en">Contact</span>
-                </a>
-            </nav>
-
-            <!-- Controls -->
-            <div class="nav-controls">
-                <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">EN</button>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme">🌙</button>
-                <a href="cv.html" class="resume-btn">
-                    <span class="lang-ru">Telegram</span>
-                    <span class="lang-en">Telegram</span>
-                </a>
-                <button class="mobile-menu-btn">☰</button>
-                <!--ffff <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button> -->
-
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-nav-links">
-                <a href="index.html#projects" class="mobile-nav-link">
-                    <span class="lang-ru">Проекты</span>
-                    <span class="lang-en">Projects</span>
-                </a>
-                <a href="index.html#about" class="mobile-nav-link">
-                    <span class="lang-ru">О себе</span>
-                    <span class="lang-en">About</span>
-                </a>
-                <a href="cv.html" class="mobile-nav-link">
-                    <span class="lang-ru">Резюме</span>
-                    <span class="lang-en">Resume</span>
-                </a>
-                <a href="index.html#contact" class="mobile-nav-link">
-                    <span class="lang-ru">Контакты</span>
-                    <span class="lang-en">Contact</span>
-                </a>
-            </div>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -151,7 +92,7 @@
         <div class="project-content">
             <div class="section">
                 <!-- Problem Section -->
-                <div class="project-section">
+                <div class="project-section py-small">
                     <h2>
                         <span class="lang-ru">Проблема бизнеса</span>
                         <span class="lang-en">Business Problem</span>
@@ -288,17 +229,7 @@
                         <span class="lang-ru">Чтобы ассистент работал на всех платформах стабильно, без зависаний, разместили его на 3-х слоях, убрали неактивные элементы с экрана, чтобы не нагружать систему:</span>
                         <span class="lang-en">To ensure the assistant works stably across all platforms without lags, we placed it on 3 layers and removed inactive elements from the screen to avoid overloading the system:</span>
                     </p>
-                    <ul class="project-list">
-                        <li>
-                            <span class="lang-ru">3 уровня слоев (фон, затемнение, ассистент)</span>
-                            <span class="lang-en">3 layer levels (background, dimming, assistant)</span>
-                        </li>
-                        
-                        <li>
-                            <span class="lang-ru">Минимальное количество элементов на экране</span>
-                            <span class="lang-en">Minimal on-screen elements</span>
-                        </li>
-                    </ul>
+                  
 
                     <div class="project-image-grid">
                     <img src="pr-ai-assistant-explain.jpg" alt="Explain" />
@@ -525,11 +456,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Vlad Tarakanov</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>

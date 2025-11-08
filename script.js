@@ -1,28 +1,69 @@
 // Global state
+let themePreference = localStorage.getItem("themePreference") || "auto"
 let currentTheme = localStorage.getItem("theme") || "light"
 let currentLang = localStorage.getItem("language") || "ru"
 
+// Функция определения темы по времени суток
+function getAutoThemeByTime() {
+  const hour = new Date().getHours()
+  // Тёмная тема: 18:00 - 6:59 (вечер и ночь)
+  // Светлая тема: 7:00 - 17:59 (утро и день)
+  return (hour >= 18 || hour < 7) ? "dark" : "light"
+}
+
 // Добавляем эти переменные после currentTheme
 const moonIcon = `
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
           d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
 </svg>`;
 
 const sunIcon = `
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
           d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
 </svg>`;
 
 const globeIcon = `
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                         </svg>`;
 
+// Load Header
+async function loadHeader() {
+  try {
+    const response = await fetch('header.html')
+    if (!response.ok) throw new Error('Failed to load header')
+    const headerHTML = await response.text()
+    const headerPlaceholder = document.getElementById('header-placeholder')
+    if (headerPlaceholder) {
+      headerPlaceholder.innerHTML = headerHTML
+    }
+  } catch (error) {
+    console.error('Error loading header:', error)
+  }
+}
+
+// Load Footer
+async function loadFooter() {
+  try {
+    const response = await fetch('footer.html')
+    if (!response.ok) throw new Error('Failed to load footer')
+    const footerHTML = await response.text()
+    const footerPlaceholder = document.getElementById('footer-placeholder')
+    if (footerPlaceholder) {
+      footerPlaceholder.innerHTML = footerHTML
+    }
+  } catch (error) {
+    console.error('Error loading footer:', error)
+  }
+}
+
 // Initialize on page load
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadHeader()
+  await loadFooter()
   initializeTheme()
   initializeLanguage()
   initializeNavigation()
@@ -33,6 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Theme Management
 function initializeTheme() {
+  // Если режим авто - определяем тему по времени
+  if (themePreference === "auto") {
+    currentTheme = getAutoThemeByTime()
+    localStorage.setItem("theme", currentTheme)
+  }
+
   document.body.setAttribute("data-theme", currentTheme)
   updateThemeToggleButton()
 }
@@ -40,9 +87,13 @@ function initializeTheme() {
 function toggleTheme() {
   currentTheme = currentTheme === "light" ? "dark" : "light"
   document.body.setAttribute("data-theme", currentTheme)
+
+  // Переключаем на ручной режим при первом клике
+  themePreference = "manual"
+  localStorage.setItem("themePreference", themePreference)
   localStorage.setItem("theme", currentTheme)
+
   updateThemeToggleButton()
-  updateNavbarBackground()
 }
 
 function updateThemeToggleButton() {
@@ -52,7 +103,6 @@ function updateThemeToggleButton() {
     button.setAttribute("aria-label", `Switch to ${currentTheme === "light" ? "dark" : "light"} theme`)
   })
 }
-updateThemeToggleButton();
 
 //function updateThemeToggleButton() {
 //  const themeButtons = document.querySelectorAll(".theme-toggle")
@@ -86,7 +136,6 @@ function updateLanguageToggleButton() {
     button.setAttribute("aria-label", `Switch to ${currentLang === "ru" ? "English" : "Russian"}`)
   })
 }
-updateThemeToggleButton();
 
 function updatePageTitle() {
   const titles = {
@@ -120,8 +169,6 @@ function initializeNavigation() {
     const navbar = document.querySelector(".navbar")
     const currentScrollY = window.scrollY
 
-    updateNavbarBackground()
-
     // Hide/show navbar on scroll (optional)
     //if (currentScrollY > lastScrollY && currentScrollY > 200) {
     //  navbar.style.transform = "translateY(-100%)"
@@ -134,16 +181,17 @@ function initializeNavigation() {
   })
 }
 
-function updateNavbarBackground() {
-  const navbar = document.querySelector(".navbar")
-  const currentScrollY = window.scrollY
-
-  if (currentScrollY > 100) {
-    navbar.style.background = currentTheme === "light" ? "rgba(255, 255, 255, 0.98)" : "rgba(10, 10, 10, 0.98)"
-  } else {
-    navbar.style.background = currentTheme === "light" ? "rgba(255, 255, 255, 0.95)" : "rgba(10, 10, 10, 0.95)"
-  }
-}
+// Функция удалена - используем только CSS-стили для фона navbar
+// function updateNavbarBackground() {
+//   const navbar = document.querySelector(".navbar")
+//   const currentScrollY = window.scrollY
+//
+//   if (currentScrollY > 100) {
+//     navbar.style.background = currentTheme === "light" ? "rgba(255, 255, 255, 0.98)" : "rgba(10, 10, 10, 0.98)"
+//   } else {
+//     navbar.style.background = currentTheme === "light" ? "rgba(255, 255, 255, 0.95)" : "rgba(10, 10, 10, 0.95)"
+//   }
+// }
 
 function setActiveNavLink() {
   const currentPage = window.location.pathname.split("/").pop() || "index.html"
@@ -227,7 +275,7 @@ function initializeMobileMenu() {
         }
       }
     })
-  })
+  });
 
   // Close menu when clicking outside
   document.addEventListener("click", (e) => {
@@ -300,7 +348,7 @@ function closeMobileMenu() {
   if (mobileMenu && mobileMenuBtn) {
     mobileMenu.classList.remove("active")
     mobileMenuBtn.classList.remove("active")
-    mobileMenuBtn.textContent = "☰"
+    mobileMenuBtn.textContent = "="
     document.body.style.overflow = ""
   }
 }

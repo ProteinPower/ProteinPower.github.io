@@ -16,69 +16,7 @@
 </head>
 <body data-lang="ru">
     <!-- Header -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">VT</a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="nav-menu">
-                <a href="index.html#projects" class="nav-link">
-                    <span class="lang-ru">Проекты</span>
-                    <span class="lang-en">Projects</span>
-                </a>
-                <a href="index.html#about" class="nav-link">
-                    <span class="lang-ru">О себе</span>
-                    <span class="lang-en">About</span>
-                </a>
-                <a href="CV_Vladialav_Tarakanov_Middle_Product_Designer_RU.pdf" class="nav-link">
-                    <span class="lang-ru">Резюме</span>
-                    <span class="lang-en">Resume</span>
-                </a>
-                <a href="index.html#contact" class="nav-link">
-                    <span class="lang-ru">Контакты</span>
-                    <span class="lang-en">Contact</span>
-                </a>
-            </nav>
-
-            <!-- Controls -->
-            <div class="nav-controls">
-                <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">EN</button>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-        </svg>🌙</button>
-                 <a href="https://t.me/vlad_tarakanov" class="resume-btn">
-                    <span class="lang-ru">Telegram</span>
-                    <span class="lang-en">Telegram</span>
-                </a>
-                <button class="mobile-menu-btn">☰</button>
-                <!--ffff <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button> -->
-
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-nav-links">
-                <a href="index.html#projects" class="mobile-nav-link">
-                    <span class="lang-ru">Проекты</span>
-                    <span class="lang-en">Projects</span>
-                </a>
-                <a href="index.html#about" class="mobile-nav-link">
-                    <span class="lang-ru">О себе</span>
-                    <span class="lang-en">About</span>
-                </a>
-                <a href="cv.html" class="mobile-nav-link">
-                    <span class="lang-ru">Резюме</span>
-                    <span class="lang-en">Resume</span>
-                </a>
-                <a href="index.html#contact" class="mobile-nav-link">
-                    <span class="lang-ru">Контакты</span>
-                    <span class="lang-en">Contact</span>
-                </a>
-            </div>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -161,7 +99,7 @@
         <div class="project-content">
             <div class="section">
                 <!-- Problem Section -->
-                <div class="project-section">
+                <div class="project-section py-small">
                     <h2>
                         <span class="lang-ru">Проблема бизнеса (Государства)</span>
                         <span class="lang-en">Business Problem (Government)</span>
@@ -258,15 +196,21 @@
                 
                     </p>
 
+                
+
 
                     <h2>
                         <span class="lang-ru">Решение</span>
                         <span class="lang-en">Solution</span>
                     </h2>
+                    <p>
 
                         <span class="lang-ru">Выявить основные боли пользователей и разработать решение на основе потребностей пользователей, а не просто реализовать самую простую и дешевую реализацию.</span>
                         <span class="lang-en">Identify core user pain points and develop a solution based on user needs, rather than just implementing the simplest and cheapest solution.</span>
                   
+                    </p>
+
+                        
 
 
                     <h3>
@@ -416,11 +360,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Vlad Tarakanov</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>

@@ -10,93 +10,35 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-lang="ru">
     <!-- Header -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">VT</a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="nav-menu">
-                <a href="#projects" class="nav-link">
-                    <span class="lang-ru">Проекты</span>
-                    <span class="lang-en">Projects</span>
-                </a>
-                <a href="#about" class="nav-link">
-                    <span class="lang-ru">О себе</span>
-                    <span class="lang-en">About</span>
-                </a>
-                <a href="CV_Vladialav_Tarakanov_Middle_Product_Designer_RU.pdf" class="nav-link">
-                    <span class="lang-ru">Резюме</span>
-                    <span class="lang-en">Resume</span>
-                </a>
-                <a href="#contact" class="nav-link">
-                    <span class="lang-ru">Контакты</span>
-                    <span class="lang-en">Contact</span>
-                </a>
-            </nav>
-
-            <!-- Controls -->
-            <div class="nav-controls">
-                <!-- Кнопка переключения языка🌙  -->
-        
-                <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language"></button>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme"></button>
-                <a href="https://t.me/vlad_tarakanov" class="resume-btn">
-                    <span class="lang-ru">Telegram</span>
-                    <span class="lang-en">Telegram</span>
-                </a>
-
-                <button class="mobile-menu-btn">☰</button>
-                <!--ffff <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button> -->
-                
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-nav-links">
-                <a href="#projects" class="mobile-nav-link">
-                    <span class="lang-ru">Проекты</span>
-                    <span class="lang-en">Projects</span>
-                </a>
-                <a href="#about" class="mobile-nav-link">
-                    <span class="lang-ru">О себе</span>
-                    <span class="lang-en">About</span>
-                </a>
-                <a href="cv.html" class="mobile-nav-link">
-                    <span class="lang-ru">Резюме</span>
-                    <span class="lang-en">Resume</span>
-                </a>
-                <a href="#contact" class="mobile-nav-link">
-                    <span class="lang-ru">Контакты</span>
-                    <span class="lang-en">Contact</span>
-                </a>
-            </div>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Main Content -->    <main class="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="section">
                 <div class="hero-content">
-                    <div class="project-type-alt">
-                        <span>Product Design • Mobile UX/UI • User Research</span>
-                        
+                    
+
+                    <div class="hero-portrait">
+                        <img src="Vlad_portrait.png" alt="Vlad Tarakanov" width="284">
                     </div>
                     <h1 class="hero-title">
-                        <span class="lang-ru">Влад Тараканов — Продуктовый Дизайнер</span>
-                        <span class="lang-en">Vlad Tarakanov — Product Designer</span>
+                        <span class="lang-ru">Владислав Тараканов</span>
+                        <span class="lang-en">Vladislav Tarakanov</span>
                     </h1>
                     
                     <div class="hero-gap">
                     <!-- <p class="hero-description">-->
-                        <span class="lang-ru">Делаю интерфейсы понятными, мобильные приложения удобными, а пользовательский опыт честным. Работаю в подходе double diamond, защищаю UX через диалог с разработкой.</span>
-                        <span class="lang-en">I make interfaces clear, mobile apps convenient, and user experience honest. I work with the double diamond approach, protecting UX through dialogue with development.</span>
+                        <span class="lang-ru">Продуктовый дизайнер, делаю интерфейсы понятными, мобильные приложения удобными, а пользовательский опыт честным. Работаю в подходе double diamond, защищаю UX через диалог с разработкой.</span>
+                        <span class="lang-en">Product designer, I make interfaces clear, mobile apps convenient, and user experience honest. I work with the double diamond approach, protecting UX through dialogue with development.</span>
                    <!-- </p>
                     </div>
           
@@ -109,16 +51,13 @@
                             <span class="skill-tag"><span class="dot-before">AI/ML Interfaces</span></span>
                    
                     </div>-->
-                              <div class="hero-cta">
-                        <a href="#projects" class="cta-button">
-                            <span class="lang-ru">Посмотреть проекты</span>
-                            <span class="lang-en">View Projects</span>
-                        </a>
-                        <a href="CV_Vladialav_Tarakanov_Middle_Product_Designer_RU.pdf" class="cta-button cta-secondary">
-                            <span class="lang-ru">Скачать CV</span>
-                            <span class="lang-en">Download CV</span>
-                        </a>
-                    </div>
+                    <a href="#projects" class="latest-projects-btn">
+                        <span class="lang-ru">Последние проекты</span>
+                        <span class="lang-en">Latest Projects</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
             </div>
         </section>
 
@@ -170,12 +109,12 @@
         
 
         <!-- Projects Section -->
-        <section id="projects" class="projects py-large">
+        <section id="projects" class="projects">
             <div class="section">
 
 
 
-            <section class="about">
+            <!--<section class="about">
                 
                     
                         <div>
@@ -191,7 +130,7 @@
                     
                     
                 
-            </section>
+            </section>-->
                   <!--<h2 class="section-title text-center">
                     <span class="lang-ru">Проекты</span>
                     <span class="lang-en">Projects</span>
@@ -279,7 +218,7 @@
                         <a href="project-ai-assistant.html" class="case-link">
                             <span class="lang-ru">Посмотреть кейс</span>
                             <span class="lang-en">View Case Study</span>
-                            →
+                            ->
                         </a>
                     </div>
                     <!-- Case Study 2 -->
@@ -348,13 +287,13 @@
                             <a href="project-pin-mobile.html" class="case-link">
                                 <span class="lang-ru">Посмотреть кейс</span>
                                 <span class="lang-en">View Case Study</span>
-                                →
+                                ->
                             </a>                            
                         </div>
 
                          <div class="main-content">
                             <div class="main-type">
-                                <span class="lang-ru">МЕДЕЦИНСКОЕ ПРИЛОЖЕНИЕ</span>
+                                <span class="lang-ru">МЕДИЦИНСКОЕ ПРИЛОЖЕНИЕ</span>
                                 <span class="lang-en">MEDICINE APP</span>
                             </div>
                             <h3>
@@ -420,7 +359,7 @@
                             <a href="project-vaccine.html" class="case-link">
                                 <span class="lang-ru">Посмотреть кейс</span>
                                 <span class="lang-en">View Case Study</span>
-                                →
+                                ->
                             </a>                            
                         </div>
 
@@ -439,20 +378,28 @@
                     <div>
                          
                         <h2 class="section-title">
-                            <span class="lang-ru">О себе</span>
+                            <span class="lang-ru">Обо мне</span>
                             <span class="lang-en">About Me</span>
                         </h2>
                         <div class="text-center py-small">
-                        <img src="vlad-photo.jpg" alt="Vlad Tarakanov" style="border-radius: 12px; max-width: 100%; height: auto;" />
+                        <img src="collage.png" alt="Vlad Tarakanov" style="border-radius: 4px; max-width: 100%; height: auto;" />
                         </div>
+
                         <p style="margin-bottom: 32px;">
+                            <span class="lang-ru">Продуктовый дизайнер. Превращаю сложные сценарии в понятные интерфейсы. Мне важно, как дизайн влияет на поведение пользователей в проде. Опыт — от внутренних сервисов до крупных B2C-платформ (видео, AI, ТВ). Создаю «живые» продукты с продуманной логикой.</span>
+                            <span class="lang-en">Product Designer. I transform complex workflows into intuitive interfaces. Passionate about how design shapes real user behavior in production. My experience ranges from internal services to major B2C platforms (video, AI, TV). I focus on creating "living" products with thoughtful logic.</span>
+                        </p>
+                       
+                      <!--<  <p style="margin-bottom: 32px;">
                             <span class="lang-ru">Глубоко копаю проблемы, нахожу самую суть и предлагаю решения которые идут в прод (обратная связь от разработчиков, дизайнеров и продактов из KION, MTS, AIC).</span>
                             <span class="lang-en">I dive deep into problems, find the core issue, and propose solutions that actually get shipped (validated by feedback from designers, developers, and product managers at KION, MTS, and AIC).</span>
                         </p>
                         <p style="margin-bottom: 32px;">
                             <span class="lang-ru">В свободное время увлекаюсь vibe-кодингом, видеоиграми и катаюсь на скейтборде. Давайте общаться!</span>
                             <span class="lang-en">In my free time, I'm into vibe-coding, video games, and skateboarding. Let's connect!</span>
-                        </p>
+                        </p>>-->
+
+                        
                         <!--<div class="skills-list">
                             <span class="skill-tag">Product Design</span>
                             <span class="skill-tag">Mobile UX/UI</span>
@@ -462,13 +409,13 @@
                             <span class="skill-tag">AI/ML Interfaces</span>
                         </div>-->
                     </div>
-                   
+                
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact py-large">
+      <!--  <section id="contact" class="contact py-large">
             <div class="section">
                 <h3 class="section-title text-center">
                     <span class="lang-ru">Контакты</span>
@@ -499,15 +446,11 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section>-->
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Vlad Tarakanov</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
      <script src="script.js" defer></script>
 </body>
