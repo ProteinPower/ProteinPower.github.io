@@ -250,7 +250,43 @@ function initializeMobileMenu() {
     mobileMenuBtn.addEventListener("click", toggleMobileMenu)
   }
 
+
+  // ...existing code...
   // Close menu when clicking on mobile nav links
+  const mobileNavLinks = document.querySelectorAll(".mobile-nav-link")
+  mobileNavLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href")
+      if (!href) return
+
+      // Разбираем href относительно текущего location
+      const url = new URL(href, location.href)
+
+      // Если ссылка ведёт на тот же путь и содержит хэш — делаем плавную прокрутку по месту
+      if (url.hash && url.pathname === location.pathname) {
+        e.preventDefault()
+        closeMobileMenu()
+
+        const targetId = url.hash.slice(1)
+        const targetElement = document.getElementById(targetId)
+        if (targetElement) {
+          // Даем время на закрытие/анимацию меню и пересчет layout
+          setTimeout(() => {
+            const offsetTop = targetElement.offsetTop - 80 // учёт фиксированного хедера
+            window.scrollTo({ top: offsetTop, behavior: "smooth" })
+          }, 200)
+        }
+        return
+      }
+
+      // Если ссылка ведёт на другую страницу (включая index.html#projects с другой страницы),
+      // не предотвращаем переход — но закрываем меню небольшим таймаутом, чтобы не блокировать тап.
+      if (url.origin === location.origin) {
+        setTimeout(() => closeMobileMenu(), 50)
+      }
+    })
+  });
+  /* Close menu when clicking on mobile nav links
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link")
   mobileNavLinks.forEach(link => {
     link.addEventListener("click", (e) => {
@@ -275,7 +311,7 @@ function initializeMobileMenu() {
         }
       }
     })
-  });
+  });*/
 
   // Close menu when clicking outside
   document.addEventListener("click", (e) => {
@@ -353,6 +389,13 @@ function closeMobileMenu() {
   }
 }
 
+
+////////
+
+
+
+
+///////
 // Animation Management
 function initializeAnimations() {
   // Intersection Observer for fade-in animations
