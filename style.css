@@ -1284,7 +1284,7 @@ p.main-description {
   gap: 8px;
   padding: 8px 16px;
   justify-content: center;
-  background-color: hsla(0, 0%, 70%, 0.5);
+  background-color: hsla(0, 0%, 85%, 0.5);
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 600;
